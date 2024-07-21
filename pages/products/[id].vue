@@ -1,9 +1,18 @@
 <template>
-  <div>Product details for: {{ id }}</div>
+  <div class="h-full w-full">
+    <h3>{{ product.title }}</h3>
+    <p>{{ product.price }}</p>
+  </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const { id } = useRoute().params;
+
+const uri = "https://fakestoreapi.com/products/" + id;
+
+const { data: product } = await useFetch(uri, {
+  key: id,
+});
 </script>
 
 <style lang="scss" scoped></style>

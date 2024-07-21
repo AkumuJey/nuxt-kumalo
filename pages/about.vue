@@ -9,7 +9,21 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+interface Rating {
+  rate: number;
+  count: number;
+}
+
+interface Product {
+  title: string;
+  price: number;
+  description: string;
+  image: string;
+  rating: Rating;
+  category: string;
+}
+</script>
 
 <style scoped>
 h3 {

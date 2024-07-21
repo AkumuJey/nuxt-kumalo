@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-blue-50 h-screen flex flex-col">
+  <div class="bg-white min-h-screen flex flex-col">
     <header class="shadow-sm py-[1rem] px-[2rem]">
       <nav class="flex justify-between font-bold">
         <nuxt-link to="/">Nuxt Kumalo</nuxt-link>
