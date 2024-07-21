@@ -1,7 +1,10 @@
 <template>
   <div class="h-full w-full">
-    <h3>{{ product.title }}</h3>
-    <p>{{ product.price }}</p>
+    <Head>
+      <Title>Nuxt Kumalo | {{ product.title }}</Title>
+      <Meta name="description" :content="product.description" />
+    </Head>
+    <ProductDetails :product="product" />
   </div>
 </template>
 
@@ -13,6 +16,13 @@ const uri = "https://fakestoreapi.com/products/" + id;
 const { data: product } = await useFetch(uri, {
   key: id,
 });
+if (!product.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Product not found",
+    fatal: true,
+  });
+}
 </script>
 
 <style lang="scss" scoped></style>

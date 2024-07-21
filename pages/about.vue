@@ -23,6 +23,9 @@ interface Product {
   rating: Rating;
   category: string;
 }
+useHead({
+  title: "Nuxt Kumalo | About",
+});
 </script>
 
 <style scoped>
